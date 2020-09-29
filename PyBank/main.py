@@ -50,19 +50,16 @@ print("*******************")
 print("Total Months: ", months)
 print("Total: ", "$", prof_loss)
 print("Average Change: ", "$", round(average_change))
-print("Greatest Increase in Profits: ", max_date, "(", "$",max_change,")")
-print("Greatest Decrease in Profits: ", min_date, "(", "$",min_change,")")
+print("Greatest Increase in Profits: ", max_date, "(","$",max_change,")")
+print("Greatest Decrease in Profits: ", min_date, "(","$",min_change,")")
 
 #List for analysis table
-title = ["Financial Analysis"]
-border = ["*****************"]
-total_months = ["Total Months:", months]
-total_prof = ["Total:", prof_loss]
-average_prof = ["Average Change:", round(average_change)]
-increase_prof = ["Greatest Increase in Profits:", max_date, "(", "$",max_change,")"]
-decrease_prof = ["Greatest Decrease in Profits:", min_date, "(", "$",min_change,")"]
+categories = ["Financial Analysis", "*****************", "Total Months:", "Total:", "Average Change:", "Greatest Increase in Profits:", "Greatest Decrease in Profits:"]
+stats = [" ", " ", months, prof_loss, average_change, max_date, min_date]
+stats_2= [" ", " ", " ", " ", " ", max_change, min_change]
 
-analysis_table= zip(title, border, total_months, total_prof, average_prof, increase_prof, decrease_prof)
+
+analysis_table= zip(categories, stats, stats_2)
 
 #Write analysis to text file, set variable for new output file
 output_file = os.path.join('Analysis', "Financial Analysis.txt")
