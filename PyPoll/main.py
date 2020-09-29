@@ -39,8 +39,24 @@ with open(election_data, 'r') as csvfile:
         percent= "%.2f%%" % percent
         votes_percent.append(percent)
 
-print(candidates)
-print(votes_won)
-print(votes_percent)
+    #Calculate max votes to identify winning candidate and name them
+    winning_votes = max(votes_won)
+    index = votes_won.index(winning_votes)
+    winner = candidates[index]
+
+
+ #Print results
+print("Election Results")
+print("***************")
+print("Total Votes:", total_votes)
+print("***************")
+print(candidates[0],":", votes_percent[0],"(", votes_won[0],")")
+print(candidates[1],":", votes_percent[1],"(", votes_won[1],")")
+print(candidates[2],":", votes_percent[2],"(", votes_won[2],")")
+print(candidates[3],":", votes_percent[3],"(", votes_won[3],")")
+print("***************")
+print("Winner:", winner)
+print("***************")
+
 
 
