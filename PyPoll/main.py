@@ -58,5 +58,19 @@ print("***************")
 print("Winner:", winner)
 print("***************")
 
+#List for results table
+categories = [ "Election Results","***************", "Total Votes:","**************", candidates[0], candidates[1], candidates[2], candidates[3],"**************","Winner:", "************"]
+stats = [" ", " ", total_votes, " ", votes_percent[0], votes_percent[1], votes_percent[2], votes_percent[3], " ", winner, " "]
+stats_2 = [" ", " ", " ", " ", votes_percent[0], votes_percent[1], votes_percent[2], votes_percent[3], " ", " ", " "]
 
+results_table = zip(categories, stats, stats_2)
+
+#Write results table to text file, set variable for new output file
+output_file = os.path.join('Analysis', "Election Results.txt")
+
+#Open output file
+with open(output_file, "w") as textfile:
+    writer=csv.writer(textfile)
+
+    writer.writerows(results_table)
 
