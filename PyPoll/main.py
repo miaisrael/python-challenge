@@ -25,7 +25,7 @@ with open(election_data, 'r') as csvfile:
     #Calculate total number of votes by counting rows, not including header
     total_votes = len(list(csvreader))
 
-    #For loop
+    #For loop to add candidate counts
     for row in csvreader:
         if row[2] == candidates[0]:
             Candidate1= Candidate1 + 1
@@ -36,5 +36,15 @@ with open(election_data, 'r') as csvfile:
         else:
             Candidate4 = Candidate4 + 1
 
-print(total_votes)
-print(candidates)
+#Print results
+print("Election Results")
+print("***************")
+print("Total Votes:", total_votes)
+print("***************")
+print(candidates[0], ":", round(Candidate1/total_votes),"%", "(", Candidate1,")")
+print(candidates[1], ":", round(Candidate1/total_votes),"%", "(", Candidate1,")")
+print(candidates[2], ":", round(Candidate1/total_votes),"%", "(", Candidate1,")")
+print(candidates[3], ":", round(Candidate1/total_votes),"%", "(", Candidate1,")")
+print("***************")
+print("Winner:", max(candidates))
+print("***************")
