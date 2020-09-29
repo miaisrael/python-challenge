@@ -53,11 +53,22 @@ print("Average Change: ", "$", round(average_change))
 print("Greatest Increase in Profits: ", max_date, "(", "$",max_change,")")
 print("Greatest Decrease in Profits: ", min_date, "(", "$",min_change,")")
 
-#Write analysis to text file, new output file
+#List for analysis table
+title = ["Financial Analysis"]
+border = ["*****************"]
+total_months = ["Total Months:", months]
+total_prof = ["Total:", prof_loss]
+average_prof = ["Average Change:", round(average_change)]
+increase_prof = ["Greatest Increase in Profits:", max_date, "(", "$",max_change,")"]
+decrease_prof = ["Greatest Decrease in Profits:", min_date, "(", "$",min_change,")"]
 
-#Set variable for output file
+analysis_table= zip(title, border, total_months, total_prof, average_prof, increase_prof, decrease_prof)
+
+#Write analysis to text file, set variable for new output file
 output_file = os.path.join('Analysis', "Financial Analysis.txt")
 
-# Open the output file
+#Open the output file
 with open(output_file, "w") as textfile:
     writer = csv.writer(textfile)
+
+    writer.writerows(analysis_table)
