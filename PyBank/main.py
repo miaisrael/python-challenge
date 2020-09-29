@@ -3,7 +3,7 @@ import os
 import csv
 
 #Path to collect data from Resources folder
-budget_data = os.path.join('..', 'Resources', '03-Python_Homework_Instructions_PyBank_Resources_budget_data.csv')
+budget_data = os.path.join('Resources', 'budget_data.csv')
 
 # CSV reader specifies delimiter and variable that holds contents
 with open(budget_data) as csvfile: 
