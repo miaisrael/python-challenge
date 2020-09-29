@@ -5,9 +5,6 @@ import csv
 #Path to collect data from Resources folder
 budget_data = os.path.join('Resources', 'budget_data.csv')
 
-#Write analysis to text file, new file
-f= open("Financial Analysis.txt", "w+")
-
 #Read in CSV file
 with open(budget_data, 'r') as csvfile:
 
@@ -55,3 +52,12 @@ print("Total: ", "$", prof_loss)
 print("Average Change: ", "$", round(average_change))
 print("Greatest Increase in Profits: ", max_date, "(", "$",max_change,")")
 print("Greatest Decrease in Profits: ", min_date, "(", "$",min_change,")")
+
+#Write analysis to text file, new output file
+
+#Set variable for output file
+output_file = os.path.join('Analysis', "Financial Analysis.txt")
+
+# Open the output file
+with open(output_file, "w") as textfile:
+    writer = csv.writer(textfile)
