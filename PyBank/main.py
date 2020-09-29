@@ -5,6 +5,9 @@ import csv
 #Path to collect data from Resources folder
 budget_data = os.path.join('Resources', 'budget_data.csv')
 
+#Write analysis to text file, new file
+f= open("Financial Analysis.txt", "w+")
+
 #Read in CSV file
 with open(budget_data, 'r') as csvfile:
 
@@ -12,7 +15,7 @@ with open(budget_data, 'r') as csvfile:
     csvreader= csv.reader(csvfile, delimiter=',')
 
     header= next(csvreader)
-    
+
 #Define variables for calculations and set at 0
     months = 0
     prof_loss = 0
@@ -44,6 +47,7 @@ with open(budget_data, 'r') as csvfile:
 #Caluclate average change   
 average_change = total_change/ (months - 1)
 
+#Print analysis
 print("Financial Analysis")
 print("*******************")
 print("Total Months: ", months)
